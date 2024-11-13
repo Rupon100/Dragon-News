@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
  
 
@@ -19,9 +20,9 @@ const LeftNavbar = () => {
             <div className="flex flex-col gap-2">
                 {
                     categories.map(category => 
-                      <button
+                      <NavLink
                       className="p-2 border rounded text-gray-500 hover:bg-base-300 hover:text-gray-800 transition-all"
-                      key={category.category_id}>{category.category_name}</button>)
+                      key={category.category_id}>{category.category_name}</NavLink>)
                 }
             </div>
         </div>

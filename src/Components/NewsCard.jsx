@@ -2,9 +2,10 @@ import ReactStars from "react-rating-stars-component";
 import { MdMarkAsUnread } from "react-icons/md";
 import { CiShare2 } from "react-icons/ci";
 import { FaEye } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const NewsCard = ({ news = {} }) => {
-    const { details, image_url, published_date, thumbnail_url, title, total_view, author, rating  } = news;
+    const { details,  _id, image_url, published_date, thumbnail_url, title, total_view, author, rating  } = news;
 
     return (
         <div className="border m-2 space-y-2">
@@ -27,7 +28,10 @@ const NewsCard = ({ news = {} }) => {
                 <div className="space-y-1">
                     <h1 className="text-xl font-semibold">{title}</h1>
                     <img className="w-full object-cover" src={thumbnail_url} alt="thumbnail" />
-                    <p className="text-gray-800">{details}</p>
+                    <p className="text-gray-800">
+                        {details.slice(0,150)}...{" "}
+                        <Link to={`/news/${_id}`}>Read More</Link>
+                    </p>
                 </div>
                 <hr />
                 <div className="flex justify-between items-center">

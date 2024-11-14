@@ -35,6 +35,7 @@ const NewsCard = ({ news = {} }) => {
                         <ReactStars
                           count={rating.number}
                           isHalf={true}
+                          value={rating.number}
                           size={24}
                           activeColor="#ffd700"
                         />

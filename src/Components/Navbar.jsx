@@ -20,7 +20,9 @@ const Navbar = () => {
             </div>
             <div className="flex items-center gap-2">
                 <div className="">
-                  <img src={userIcon} alt="userIcon" />
+                  {
+                    user && user?.email ? <div><img className="w-12 h-12 object-cover rounded-full" src={user.photoURL} alt="" /></div> : <img src={userIcon} alt="userIcon" />
+                  }
                 </div>
                 {
                     user 

@@ -10,7 +10,8 @@ const CategoryNews = () => {
             <h2 className="font-semibold py-2">Dragon News Home</h2>
             <div>
                 {
-                    news.map(singleNews => <NewsCard key={singleNews._id} news={singleNews}></NewsCard>)
+                    news && news.length > 0 ? (news.map((singleNews) =>  <NewsCard key={singleNews._id} news={singleNews}></NewsCard>)) : <h1 className="text-red-400 font-semibold">No Data Available in this category :)</h1>
+                    // news.map((singleNews) =>  <NewsCard key={singleNews._id} news={singleNews}></NewsCard>)
                 }
             </div>
         </div>

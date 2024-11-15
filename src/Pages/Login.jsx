@@ -9,7 +9,7 @@ const Login = () => {
     const [error, setError] = useState({});
     const location = useLocation();
     const navigate = useNavigate();
-    console.log(location)
+    // console.log(location)
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -17,11 +17,11 @@ const Login = () => {
         const data = new FormData(e.target);
         const email = data.get("email");
         const pass = data.get("pass");
-        console.log(email, pass);
+        //console.log(email, pass);
 
         loginUser(email, pass)
         .then(result => {
-            console.log(result.user);
+            //console.log(result.user);
             setUser(result.user);
             navigate(location?.state ? location.state : '/');            
         })

@@ -6,6 +6,9 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import NewsDetails from "../Pages/NewsDetails";
 import PrivateRoute from "./PrivateRoute";
+import Career from "../Components/Career";
+import About from "../Components/About";
+import Latest from "../Components/Latest";
 
 const Router = createBrowserRouter([
     {
@@ -22,6 +25,18 @@ const Router = createBrowserRouter([
                 loader: ({params}) => fetch(`https://openapi.programming-hero.com/api/news/category/${params.id}`)
             }
         ],
+    },
+    {
+        path: '/career',
+        element: <Career></Career>
+    },
+    {
+        path: '/about',
+        element: <About></About>
+    },
+    {
+        path: '/news/latest',
+        element: <Latest></Latest>
     },
     {
         path: '/news/:id',

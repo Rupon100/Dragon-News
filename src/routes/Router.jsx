@@ -9,6 +9,7 @@ import PrivateRoute from "./PrivateRoute";
 import Career from "../Components/Career";
 import About from "../Components/About";
 import Latest from "../Components/Latest";
+import ErrorPage from "../Components/ErrorPage";
 
 const Router = createBrowserRouter([
     {
@@ -59,7 +60,7 @@ const Router = createBrowserRouter([
     },
     {
         path: '*',
-        element: <h1>Error here</h1>
+        element: <ErrorPage></ErrorPage>
     }
 ])
 
